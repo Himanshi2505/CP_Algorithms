@@ -21,8 +21,8 @@ int main(){
         }
         else{
             int ops = cnt2 - n/2;
+            //n/2 are number of -1 left now; lets check if its odd or even
             if(n/2 % 2 == 1) ops++;
-
             cout<<ops<<endl;
         }   
     }
