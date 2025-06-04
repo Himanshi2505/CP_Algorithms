@@ -5,32 +5,23 @@ void solve(){
     int a,b,c;
     cin>>a>>b>>c;
 
-    for(int i=1;i<=10^8;i++){
-        a = i*a;
-        if(2*b == a+c){
-            cout<<"yes"<<endl;
-            break;
-        }
+    if((2*b - c)%a == 0 && (2*b - c)/a >0){
+        cout<<"YES"<<endl;
     }
-    for(int i=1;i<=10^8;i++){
-        b = i*b;
-        if(2*b == a+c){
-            cout<<"yes"<<endl;
-            break;
-        }
+    else if((a+c)%(2*b) ==0 && (a+c)/(2*b)>0){
+        cout<<"yes"<<endl;
     }
-    for(int i=1;i<=10^8;i++){
-        c = i*c;
-        if(2*b == a+c){
-            cout<<"yes"<<endl;
-            break;
-        }
+    else if((2*b - a)%c ==0 && (2*b - a)/c >0){
+        cout<<"YES"<<endl;
     }
-
-
+    else {
+        cout<<"NO"<<endl;
+    }
 }
 
 int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
     int t;
     cin>>t;
     while(t--){
