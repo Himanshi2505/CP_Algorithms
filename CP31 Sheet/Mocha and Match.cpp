@@ -24,31 +24,31 @@
 // this is the smallest value possible , and of all elements
 // you have minimized the maximum value
 
-#include<bits/stdc++.h>
-using namespace std;
 
+#include <bits/stdc++.h>
+using namespace std;
+ 
+ 
 void solve(){
     int n;
     cin>>n;
-
+    
     vector<int> arr(n);
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-
-    int ans = accumulate(arr.begin() , arr.end(), arr[0], 
-        std:: bit_and<int>());
-
-        cout<<ans<<endl;
-
-}
-
-
-int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        solve();
+    
+    int ans = arr[0];
+    for(int i=1;i<n;i++){
+        ans = ans & arr[i];
     }
-    return 0;
+    cout<<ans<<endl;
+}
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    solve();
+	}
+  return 0;
 }
